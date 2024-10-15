@@ -80,3 +80,22 @@ def calcular_recaudacion_total(matriz_concesionaria: list[list]) -> None:
         total += matriz_transformada[filas][4]
     
     print(f"\nTOTAL DE RECAUDACON: {total}\n")
+
+
+def cantidad_garages_seis_o_mas(matriz_concesionaria: list[list]) -> None:
+    """_summary_  Devuelve la cantidad de garages que tienen 6 o mas vehiculos
+
+    Args:
+        matriz_concesionaria (list[list]): _description_
+    """
+
+    matriz_transformada = transformar_matriz(matriz_concesionaria)
+    cantidad_garages = 0
+    
+
+    for indice_fila in range(len(matriz_transformada)):
+        if matriz_transformada[indice_fila][3] >= 6:
+            cantidad_garages += 1
+    
+    print(f"\n La cantidad de garages con seis o mas vehiculos es de {cantidad_garages}\n ")
+    
