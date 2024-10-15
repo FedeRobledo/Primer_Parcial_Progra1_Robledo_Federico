@@ -48,6 +48,7 @@ def calcular_garage_menos_unidades(matriz_concesionaria: list[list]) -> None:
         modelo {matriz_transformada[indice_minimo][2]} con un valor de {matriz_transformada[indice_minimo][4]}$ por unidad
         """)
 
+
 # Se que son mas de uno y que podria mostrarlos con su detalle pero prefiero avanzar, completarlo luego.
 def calcular_mayor_cant_unidades(matriz_concesionaria: list[list]) -> None:
     """_summary_ Permite saber cuanta es la mayor cantidad de unidades que tiene el garage con mas unidades
@@ -64,3 +65,18 @@ def calcular_mayor_cant_unidades(matriz_concesionaria: list[list]) -> None:
             indice_maximo = indice_fila
     
     print(f"El garage que mas vehiculos tiene cuenta con un total de {matriz_transformada[indice_maximo][3]} unidades.")
+
+def calcular_recaudacion_total(matriz_concesionaria: list[list]) -> None:
+    """_summary_ Suma la recaudacion de cada garage y luego un resumen con la recaudacion total
+
+    Args:
+        matriz_concesionaria (list[list]): _description_
+    """
+    matriz_transformada = transformar_matriz(matriz_concesionaria)
+
+    total = 0
+
+    for filas in range(len(matriz_concesionaria[0])):
+        total += matriz_transformada[filas][4]
+    
+    print(f"\nTOTAL DE RECAUDACON: {total}\n")

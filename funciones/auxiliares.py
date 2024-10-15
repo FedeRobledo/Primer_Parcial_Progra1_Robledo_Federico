@@ -34,6 +34,9 @@ def transformar_matriz(matriz_concesionaria: list[list]) -> list[list]:
         for indice_columna in range(cantidad_columnas + 1):
             if indice_columna == 0:
                 columna = indice_columna + indice_fila
+            elif indice_columna == 5:
+                columna = int(matriz_concesionaria[2][indice_fila]) * \
+                    int(matriz_concesionaria[3][indice_fila])
             else:
                 columna = matriz_concesionaria[indice_columna - 1][indice_fila]
             
