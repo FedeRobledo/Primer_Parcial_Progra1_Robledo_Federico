@@ -1,4 +1,4 @@
-from UTN_Heroes_Dataset.utn_pp import get_original_matrix, mostrar_matriz_texto_tabla, clear_console, color_text
+from UTN_Heroes_Dataset.utn_pp import get_original_matrix
 from app import concesionaria_app
 
 matriz_concesionaria = get_original_matrix()

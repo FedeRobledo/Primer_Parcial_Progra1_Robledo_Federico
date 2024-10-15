@@ -1,5 +1,7 @@
 from funciones import mostrar_el_menu, validar_numero, mostrar_existencias, calcular_total_vehiculos,\
- calcular_garage_menos_unidades, calcular_mayor_cant_unidades, calcular_recaudacion_total, cantidad_garages_seis_o_mas
+ calcular_garage_menos_unidades, calcular_mayor_cant_unidades, calcular_recaudacion_total, cantidad_garages_seis_o_mas, \
+mostrar_porcentajes_y_garage_mas_importante
+
 from UTN_Heroes_Dataset.utn_pp import clear_console
 
 def concesionaria_app(matriz_concesionaria: list[list]):
@@ -23,6 +25,7 @@ def concesionaria_app(matriz_concesionaria: list[list]):
                 cantidad_garages_seis_o_mas(matriz_concesionaria)
                 pass
             case 7:
+                mostrar_porcentajes_y_garage_mas_importante(matriz_concesionaria)
                 pass
             case 8:
                 pass

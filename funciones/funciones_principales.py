@@ -1,5 +1,5 @@
 from UTN_Heroes_Dataset.utn_pp import mostrar_matriz_texto_tabla
-from .auxiliares import transformar_matriz
+from .auxiliares import transformar_matriz, obtener_total_vehiculos
 
 
 def mostrar_existencias(matriz_concesionaria: list[list]) -> None:
@@ -19,13 +19,9 @@ def calcular_total_vehiculos(lista_cantidades: list) -> None:
         lista_cantidades (list): _description_
     """
 
-    cantidad_filas = len(lista_cantidades)
-    cantidad_de_vehiculos = 0
-
-    for indice_cantidad_garage in range(cantidad_filas):
-        cantidad_de_vehiculos += lista_cantidades[indice_cantidad_garage]
+    total_vehiculos = obtener_total_vehiculos(lista_cantidades)
     
-    print(f"\n La cantidad total de vehiculos sumando los que se encuentran en cada garage es de {cantidad_de_vehiculos} unidades\n")
+    print(f"\n La cantidad total de vehiculos sumando los que se encuentran en cada garage es de {total_vehiculos} unidades\n")
 
 
 def calcular_garage_menos_unidades(matriz_concesionaria: list[list]) -> None:
@@ -98,4 +94,39 @@ def cantidad_garages_seis_o_mas(matriz_concesionaria: list[list]) -> None:
             cantidad_garages += 1
     
     print(f"\n La cantidad de garages con seis o mas vehiculos es de {cantidad_garages}\n ")
-    
+
+
+## INCOMPLETO
+def mostrar_porcentajes_y_garage_mas_importante(matriz_concesionaria: list[list]) -> None:
+    """_summary_ Muestra el porcentaje de unidades de cada marca de vehículo sobre el total de vehículos almacenados 
+    entre todos los garajes de la sede matriz. Además muestra todos los datos del garaje con el máximo porcentaje de 
+    vehículos almacenados.
+
+    Args:
+        matriz_concesionaria (list[list]): _description_
+    """
+
+    total_vehiculos = obtener_total_vehiculos(matriz_concesionaria[2])
+
+    lista_marcas = matriz_concesionaria[0]
+
+    marcas = []
+
+    for marca in lista_marcas:
+        if marca not in marcas:
+            marcas.append(marca)
+
+    matriz_marca_total = [
+        marcas, []
+    ]
+
+    for marca in marcas:
+        total_marca = 0
+        for indice in range(len(matriz_concesionaria[0])):
+            if matriz_concesionaria[0][indice] == marca:
+                total_marca += matriz_concesionaria[2][indice]
+        matriz_marca_total[1].append(total_marca)
+
+
+    for indice in range(len(matriz_marca_total)):
+        print(f"El porcentaje de {matriz_marca_total[0][indice]} es de {(matriz_marca_total[1][indice] / 83 * 100)}")
