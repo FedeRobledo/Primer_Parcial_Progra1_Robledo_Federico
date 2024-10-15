@@ -1,4 +1,4 @@
-from funciones import mostrar_el_menu, validar_numero, mostrar_existencias, calcular_total_vehiculos
+from funciones import mostrar_el_menu, validar_numero, mostrar_existencias, calcular_total_vehiculos, calcular_garage_menos_unidades
 from UTN_Heroes_Dataset.utn_pp import clear_console
 
 def concesionaria_app(matriz_concesionaria: list[list]):
@@ -13,7 +13,7 @@ def concesionaria_app(matriz_concesionaria: list[list]):
             case 2:
                 calcular_total_vehiculos(matriz_concesionaria[2])
             case 3:
-                pass
+                calcular_garage_menos_unidades(matriz_concesionaria)
             case 4:
                 pass
             case 5:
