@@ -1,9 +1,8 @@
-from funciones import mostrar_el_menu, validar_numero, mostrar_existencias
+from funciones import mostrar_el_menu, validar_numero, mostrar_existencias, calcular_total_vehiculos
 from UTN_Heroes_Dataset.utn_pp import clear_console
 
 def concesionaria_app(matriz_concesionaria: list[list]):
-    print("soy concesionaria app")
-    
+
     while True:
         mostrar_el_menu()
         numero_validado = validar_numero(1, 9)
@@ -11,9 +10,8 @@ def concesionaria_app(matriz_concesionaria: list[list]):
         match numero_validado:
             case 1:
                 mostrar_existencias(matriz_concesionaria)
-                pass
             case 2:
-                pass
+                calcular_total_vehiculos(matriz_concesionaria[2])
             case 3:
                 pass
             case 4:
@@ -30,5 +28,4 @@ def concesionaria_app(matriz_concesionaria: list[list]):
                 break
             case _:
                 continue
-    
     clear_console()
