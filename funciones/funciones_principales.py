@@ -128,5 +128,5 @@ def mostrar_porcentajes_y_garage_mas_importante(matriz_concesionaria: list[list]
         matriz_marca_total[1].append(total_marca)
 
 
-    for indice in range(len(matriz_marca_total)):
+    for indice in range(len(matriz_marca_total[0])):
         print(f"El porcentaje de {matriz_marca_total[0][indice]} es de {(matriz_marca_total[1][indice] / 83 * 100)}")
